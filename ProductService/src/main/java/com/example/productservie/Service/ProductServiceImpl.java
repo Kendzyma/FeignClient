@@ -20,8 +20,7 @@ public class ProductServiceImpl implements ProductService{
                 .orElseThrow(() -> new RuntimeException("Product does not exist"));
 
         if (newProduct.getTotalNumber() >= product.getTotalNumber()) {
-            Products products = inventoryClient.updateProduct(product);
-            return products;
+            return inventoryClient.updateProduct(product);
         }
         else {
             throw new RuntimeException("Product Out of stock!!!");

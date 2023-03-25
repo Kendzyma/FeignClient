@@ -18,8 +18,8 @@ public class InventoryController {
                 new Products("bournvita",21.2,2),
                 new Products("Milk",43.2,5)));
     }
-    @PostMapping("update")
 
+    @PutMapping()
     public Products updateProduct(@RequestBody Products products){
        return productsList().stream().
                filter(products1 -> products1.getProductName().equals(products.getProductName())).findFirst()

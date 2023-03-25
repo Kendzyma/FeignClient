@@ -26,6 +26,6 @@ public class InventoryController {
                .map(product1 -> {
                    product1.setTotalNumber(product1.getTotalNumber() - products.getTotalNumber());
                    return product1;
-               }).orElseThrow(()-> new RuntimeException("Product Not found"));
+               }).orElseThrow(()-> new RuntimeException("Error Updating Product"));
     }
 }
